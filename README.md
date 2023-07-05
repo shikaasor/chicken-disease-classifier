@@ -157,3 +157,10 @@ docker push chickenapp.azurecr.io/chicken:latest
 2. Push the Docker image to Container Registry
 3. Launch the Web App Server in Azure 
 4. Pull the Docker image from the container registry to Web App server and run 
+
+gcloud builds submit --tag gcr.io/fine-nimbus-387314/home
+gcloud builds submit --tag gcr.io/fine-nimbus-387314/home --platform managed
+
+gcloud run deploy SERVICE_NAME --image IMAGE_URL --platform managed --region REGION
+
+gcloud builds submit \ --tag gcr.io fine-nimbus-387314/home \ --platform managed \ --project fine-nimbus-387314
