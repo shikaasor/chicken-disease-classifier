@@ -1,6 +1,10 @@
 FROM python:3.9.17-slim-bullseye
 
+COPY . /app
 
+WORKDIR /app
 
-COPY requirements.txt /tmp/requirements.txt
-RUN python3 -m pip install -r /tmp/requirements.txt
+RUN pip install -r requirements.txt
+RUN pip install -e .
+
+CMD python app.py
